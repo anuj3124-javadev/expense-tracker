@@ -5,10 +5,10 @@ import Filters from "./components/Filters";
 import Summary from "./components/Summary";
 import { ExpenseProvider } from "./context/ExpenseContext";
 import CurrencySelector from "./components/CurrencySelector";
-import './styles.css'; 
+import './styles.css';
 
 const App = () => {
-  const [ filter, setFilter] = useState("ALL");
+  const [filter, setFilter] = useState("ALL");
 
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);

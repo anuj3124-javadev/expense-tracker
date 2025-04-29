@@ -1,33 +1,19 @@
 import React, { useContext } from "react";
 import { ExpenseContext } from "../context/ExpenseContext";
-import ExpenseItem from "./ExpenseItem";
 import '../styles.css';
 
-const ExpenseList = () => {
-  const { expenses } = useContext(ExpenseContext);
+const ExpenseItem = ({ expense }) => {
+  const { deleteExpense } = useContext(ExpenseContext);
 
   return (
-    <div className="expense-list">
-      <h3>Expense List</h3>
-      <table className="expense-table">
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Currency</th>
-            <th>Date</th>
-            <th>Category</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {expenses.map((expense) => (
-            <ExpenseItem key={expense.id} expense={expense} />
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <span>{expense.description}</span>
+      <span>{expense.amount} {expense.currency}</span>
+      <span>{expense.date}</span>
+      <span>{expense.category}</span>
+      <button onClick={() => deleteExpense(expense.id)}>Delete</button>
     </div>
   );
 };
 
-export default ExpenseList;
+export default ExpenseItem;

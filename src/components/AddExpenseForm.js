@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { ExpenseContext } from "../context/ExpenseContext";
 import { v4 as uuidv4 } from "uuid";
-import '../styles.css'; 
+import '../styles.css';
 
 const AddExpenseForm = () => {
   const { addExpense } = useContext(ExpenseContext);
