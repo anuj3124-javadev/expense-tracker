@@ -1,0 +1,233 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #4f9d97, #c4e4db);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Title */
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Container for Add Expense, Expense List, and Summary */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  /* Add Expense Form */
+  .add-expense-form {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    flex: 1 1 45%;
+  }
+  
+  .add-expense-form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  form input,
+  form select,
+  form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Expense List */
+  .expense-list {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    flex: 1 1 45%;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  /* Updated Expense Table Format */
+  .expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  .expense-table th,
+  .expense-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .expense-table th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .expense-table td {
+    font-size: 0.95rem;
+  }
+  
+  .expense-table tr:hover {
+    background-color: #e3fcec;
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+  }
+  
+  /* Filter Section */
+  .filter-bar {
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .filter-bar select,
+  .filter-bar input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 150px;
+  }
+  
+  .filter-bar button {
+    background-color: #1976d2;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-bar button:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Summary Section */
+  .summary {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    flex: 1 1 100%;
+    margin-top: 20px;
+  }
+  
+  .summary h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .summary p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .summary .total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4caf50;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .add-expense-form,
+    .expense-list,
+    .summary {
+      flex: 1 1 100%;
+    }
+  
+    .filter-bar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .expense-table th,
+    .expense-table td {
+      font-size: 0.9rem;
+    }
+  }
+  
